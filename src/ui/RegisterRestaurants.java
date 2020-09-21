@@ -4,6 +4,7 @@ import model.CityRestaurants;
 import java.util.Scanner;
 
 public class RegisterRestaurants {
+
     Scanner scan = new Scanner(System.in);
     int opt ;
 

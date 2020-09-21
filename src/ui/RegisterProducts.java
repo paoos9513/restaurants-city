@@ -43,7 +43,7 @@ public class RegisterProducts {
             cityRestaurants.addProducts(product);
             System.out.println("El producto se ha registrado de manera exictosa");
         }
-
+        //Prueba de funcion
         for (int i = 0; i < cityRestaurants.getProducts().size() ; i++) {
             Product product = cityRestaurants.getProducts().get(i);
             System.out.println("Resturante Numero: " + i);

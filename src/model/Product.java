@@ -2,7 +2,7 @@ package model;
 
 import java.util.ArrayList;
 
-public class Product {
+public class Product{
     private int ProductCode;
     private String productName;
     private String productDescription;
