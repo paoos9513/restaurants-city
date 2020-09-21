@@ -1,13 +1,16 @@
 package ui;
 
 import model.CityRestaurants;
+import model.Product;
+
 import java.util.Scanner;
 
 public class Menu {
     Scanner scan = new Scanner(System.in);
     int opt;
     CityRestaurants cityRestaurants;
-    RegisterRestaurants register= new RegisterRestaurants();
+    RegisterRestaurants registerTheRestaurant = new RegisterRestaurants();
+    RegisterProducts registerTheProduct = new RegisterProducts();
 
     public Menu (){
         show();
@@ -45,10 +48,10 @@ public class Menu {
         switch (opt){
 
             case 1:
-                register.registerRestaurants();
+                registerTheRestaurant.registerRestaurants();
                 break;
             case 2:
-
+                registerTheProduct.registerProducts();
                 break;
 
             case 3:

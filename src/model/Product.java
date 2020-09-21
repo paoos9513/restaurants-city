@@ -1,26 +1,29 @@
 package model;
 
+import java.util.ArrayList;
+
 public class Product {
-    private int code;
+    private int ProductCode;
     private String productName;
     private String productDescription;
     private String restaurantNit;
     private double productValue;
+    ArrayList<Product> products = new ArrayList<>();
 
     public Product(int code, String productName, String productDescription, String restaurantNit, double productValue) {
-        this.code = code;
+        this.ProductCode = code;
         this.productName = productName;
         this.productDescription = productDescription;
         this.restaurantNit = restaurantNit;
         this.productValue = productValue;
     }
 
-    public int getCode() {
-        return code;
+    public int getProductCode() {
+        return ProductCode;
     }
 
-    public void setCode(int code) {
-        this.code = code;
+    public void setProductCode(int productCode) {
+        this.ProductCode = productCode;
     }
 
     public String getProductName() {

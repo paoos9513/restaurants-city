@@ -1,7 +1,6 @@
 package ui;
 
 import model.CityRestaurants;
-
 import java.util.Scanner;
 
 public class RegisterRestaurants {
@@ -11,7 +10,7 @@ public class RegisterRestaurants {
     CityRestaurants cityRestaurants = new CityRestaurants("","","");
 
     public RegisterRestaurants (){
-
+            cityRestaurants.initRestaurants();
     }
 
     public void registerRestaurants(){
@@ -37,7 +36,15 @@ public class RegisterRestaurants {
         }
 
         System.out.println("sus restaurantes son: ");
+
+        //PRUEBA PRUEBA DE FUNCION
+
         for (int i = 0; i < cityRestaurants.getRestaurants().size() ; i++) {
+            CityRestaurants restaurant = cityRestaurants.getRestaurants().get(i);
+            System.out.println("Resturante Numero: " + i);
+            System.out.println("nombre de restaurante: " + restaurant.getRestaurantName());
+            System.out.println("NIT" + restaurant.getNit());
+            System.out.println("nombre de ADMINISTRADOR: " + restaurant.getAdministratorName());
 
         }
 

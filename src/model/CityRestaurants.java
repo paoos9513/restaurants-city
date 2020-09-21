@@ -8,9 +8,10 @@ public class CityRestaurants {
     private String restaurantName;
     private String nit;
     private String administratorName;
-    private  ArrayList<CityRestaurants> restaurants = new ArrayList<>();
 
-    ArrayList<Client> clients = new ArrayList<>();
+    private  ArrayList<CityRestaurants> restaurants = new ArrayList<>();
+    private ArrayList<Client> clients = new ArrayList<>();
+    private ArrayList<Product> products = new ArrayList<>();
 
     public CityRestaurants(String restaurantName, String nit, String administratorName) {
         this.restaurantName = restaurantName;
@@ -21,6 +22,7 @@ public class CityRestaurants {
     public void addRestaurants( CityRestaurants restaurants){
         this.restaurants.add(restaurants);
     }
+
 
     public void initRestaurants(){
         restaurants.add( new CityRestaurants( "Crepes&Crepes",
@@ -39,6 +41,10 @@ public class CityRestaurants {
         );
 
     }
+    public void addProducts( Product products){
+        this.products.add(products);
+    }
+
 
     public String getRestaurantName() {
         return restaurantName;
@@ -70,6 +76,22 @@ public class CityRestaurants {
 
     public void setRestaurants(ArrayList<CityRestaurants> restaurants) {
         this.restaurants = restaurants;
+    }
+
+    public ArrayList<Client> getClients() {
+        return clients;
+    }
+
+    public void setClients(ArrayList<Client> clients) {
+        this.clients = clients;
+    }
+
+    public ArrayList<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(ArrayList<Product> products) {
+        this.products = products;
     }
 }
 
