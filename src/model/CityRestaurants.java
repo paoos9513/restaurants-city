@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CityRestaurants {
+
     private String restaurantName;
     private String nit;
     private String administratorName;
-
-    private ArrayList<CityRestaurants> restaurants = new ArrayList<>();
+    private  ArrayList<CityRestaurants> restaurants = new ArrayList<>();
 
     ArrayList<Client> clients = new ArrayList<>();
 
@@ -16,7 +16,6 @@ public class CityRestaurants {
         this.restaurantName = restaurantName;
         this.nit = nit;
         this.administratorName = administratorName;
-        initRestaurants();
     }
 
     public void addRestaurants( CityRestaurants restaurants){

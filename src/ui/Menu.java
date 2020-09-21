@@ -1,10 +1,13 @@
 package ui;
 
+import model.CityRestaurants;
 import java.util.Scanner;
 
 public class Menu {
     Scanner scan = new Scanner(System.in);
     int opt;
+    CityRestaurants cityRestaurants;
+    RegisterRestaurants register= new RegisterRestaurants();
 
     public Menu (){
         show();
@@ -16,13 +19,11 @@ public class Menu {
         System.out.println(" WELCOME TO THE DOMICILES PLATFORM ");
         System.out.println("************************************");
         menu();
-        show();
     }
 
     public void menu(){
-
-        System.out.println("Select the option you want");
         System.out.println("----------------MENU----------------");
+        System.out.println("Select the option you want");
         System.out.println(" ");
         System.out.println("(1).Register Restaurant \n" +
                 "(2).Register Product \n" +
@@ -34,7 +35,7 @@ public class Menu {
                 "(8).Update Client Data \n" +
                 "(9).Update Order Data \n" +
                 "(10).Save Information \n" +
-                "(11).Save Information \n" +
+                "(11).Save Update \n" +
                 "(12).Print \n" +
                 "(13).Import \n" +
                 "(14).Closed \n"
@@ -44,7 +45,7 @@ public class Menu {
         switch (opt){
 
             case 1:
-
+                register.registerRestaurants();
                 break;
             case 2:
 
@@ -95,4 +96,5 @@ public class Menu {
         }
 
     }
+
 }
