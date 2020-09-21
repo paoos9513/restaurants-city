@@ -45,6 +45,9 @@ public class CityRestaurants {
         this.products.add(products);
     }
 
+    public void addClients( Client client){
+        this.clients.add(client);
+    }
 
     public String getRestaurantName() {
         return restaurantName;

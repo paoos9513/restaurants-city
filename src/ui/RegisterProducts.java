@@ -47,7 +47,7 @@ public class RegisterProducts {
         for (int i = 0; i < cityRestaurants.getProducts().size() ; i++) {
             Product product = cityRestaurants.getProducts().get(i);
             System.out.println("Resturante Numero: " + i);
-            System.out.println("codugo de producto es : " + product.getProductCode());
+            System.out.println("codigo de producto es : " + product.getProductCode());
             System.out.println("el nombre del producto es: " + product.getProductName());
             System.out.println("la descripcion del producto es : " + product.getProductDescription());
             System.out.println("el nit del restaurante es : " + product.getRestaurantNit());
