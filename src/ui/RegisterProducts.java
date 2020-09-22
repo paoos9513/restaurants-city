@@ -43,11 +43,11 @@ public class RegisterProducts {
             cityRestaurants.addProducts(product);
             System.out.println("El producto se ha registrado de manera exictosa");
         }
-        //Prueba de funcion
+        //Prueba prueba
         for (int i = 0; i < cityRestaurants.getProducts().size() ; i++) {
             Product product = cityRestaurants.getProducts().get(i);
             System.out.println("Resturante Numero: " + i);
-            System.out.println("codigo de producto es : " + product.getProductCode());
+            System.out.println("codugo de producto es : " + product.getProductCode());
             System.out.println("el nombre del producto es: " + product.getProductName());
             System.out.println("la descripcion del producto es : " + product.getProductDescription());
             System.out.println("el nit del restaurante es : " + product.getRestaurantNit());

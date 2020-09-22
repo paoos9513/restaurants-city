@@ -11,7 +11,8 @@ public class Menu {
     CityRestaurants cityRestaurants;
     RegisterRestaurants registerTheRestaurant = new RegisterRestaurants();
     RegisterProducts registerTheProduct = new RegisterProducts();
-
+    RegisterClients registerTheClient = new RegisterClients();
+    RegisterOrder registerTheOrder= new RegisterOrder();
 
     public Menu (){
         show();
@@ -22,81 +23,84 @@ public class Menu {
         System.out.println("************************************");
         System.out.println(" WELCOME TO THE DOMICILES PLATFORM ");
         System.out.println("************************************");
-        menu();
     }
 
     public void menu(){
-        System.out.println("----------------MENU----------------");
-        System.out.println("Select the option you want");
-        System.out.println(" ");
-        System.out.println("(1).Register Restaurant \n" +
-                "(2).Register Product \n" +
-                "(3).Register Client \n" +
-                "(4).Register Order \n" +
-                "(5).Order Status \n" +
-                "(6).Update Restaurant Data \n" +
-                "(7).Update Product Data \n" +
-                "(8).Update Client Data \n" +
-                "(9).Update Order Data \n" +
-                "(10).Save Information \n" +
-                "(11).Save Update \n" +
-                "(12).Print \n" +
-                "(13).Import \n" +
-                "(14).Closed \n"
-        );
+        while (opt!=13) {
+            System.out.println(" ");
+            System.out.println("----------------MENU----------------");
+            System.out.println("Select the option you want \n");
+            System.out.println("(1).Register Restaurant \n" +
+                    "(2).Register Product \n" +
+                    "(3).Register Client \n" +
+                    "(4).Register Order \n" +
+                    "(5).Order Status \n" +
+                    "(6).Update Restaurant Data \n" +
+                    "(7).Update Product Data \n" +
+                    "(8).Update Client Data \n" +
+                    "(9).Update Order Data \n" +
+                    "(10).Save Information \n" +
+                    "(11).Save Update \n" +
+                    "(12).Print \n" +
+                    "(13).Import \n" +
+                    "(14).Closed \n"
+            );
         opt = Integer.parseInt(scan.nextLine());
 
-        switch (opt){
 
-            case 1:
-                registerTheRestaurant.registerRestaurants();
-                break;
-            case 2:
-                registerTheProduct.registerProducts();
-                break;
+            switch (opt) {
 
-            case 3:
-                break;
+                case 1:
+                    registerTheRestaurant.registerRestaurants();
+                    break;
+                case 2:
+                    registerTheProduct.registerProducts();
+                    break;
 
-            case 4:
+                case 3:
+                    registerTheClient.registerClients();
+                    break;
 
-                break;
+                case 4:
+                    registerTheOrder.registerOrder();
+                    break;
 
-            case 5:
+                case 5:
 
-                break;
+                    break;
 
-            case 6:
+                case 6:
 
-                break;
+                    break;
 
-            case 7:
-                break;
+                case 7:
+                    break;
 
-            case 8:
-                break;
+                case 8:
+                    break;
 
-            case 9:
+                case 9:
 
-                break;
+                    break;
 
-            case 10:
+                case 10:
 
-                break;
+                    break;
 
-            case 11:
+                case 11:
 
-                break;
+                    break;
 
-            case 12:
+                case 12:
 
-                break;
+                    break;
 
-            case 13:
-                scan.close();
-                break;
-            default:
-                System.out.println("The option is incorrect");
+                case 13:
+                    scan.close();
+                    break;
+                default:
+                    System.out.println("The option is incorrect");
+            }
         }
 
     }

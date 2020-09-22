@@ -6,11 +6,12 @@ public class Order {
     private int orderCode;
     private int codeProduct;
     private int quantity;
-    private Date date;
+    private Date date ;
     private Date hour;
     private String idClient;
     private String nitRestaurant;
     private String listProducts;
+
 
     public Order(int orderCode, int codeProduct, int quantity, Date date, Date hour, String idClient, String nitRestaurant, String listProducts) {
         this.orderCode = orderCode;
@@ -21,10 +22,12 @@ public class Order {
         this.idClient = idClient;
         this.nitRestaurant = nitRestaurant;
         this.listProducts = listProducts;
+        date = new Date();
+
     }
 
     public int getOrderCode() {
-        return orderCode;
+        return orderCode = (int)(1000000 * Math.random());
     }
 
     public void setOrderCode(int orderCode) {
