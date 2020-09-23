@@ -1,6 +1,7 @@
 package ui;
 
 import model.CityRestaurants;
+import model.Platform;
 
 import java.util.Scanner;
 
@@ -8,14 +9,14 @@ public class RegisterRestaurants {
 
     Scanner scan = new Scanner(System.in);
     int opt ;
+    Platform platform;
 
-   CityRestaurants cityRestaurants ;
     public RegisterRestaurants (){
-        cityRestaurants = new CityRestaurants("","","");
+        platform= new Platform();
     }
 
     public void registerRestaurants(){
-        cityRestaurants.initRestaurants();
+
         System.out.println("How many restaurants do you want to register?");
         opt = Integer.parseInt(scan.nextLine());
 
@@ -33,7 +34,7 @@ public class RegisterRestaurants {
                     administrationsName
             );
 
-            cityRestaurants.addRestaurants(restaurant);
+            platform.addRestaurants(restaurant);
             System.out.println("El restaurante se ha registrado de manera exictosa");
         }
 
@@ -41,8 +42,8 @@ public class RegisterRestaurants {
 
         //PRUEBA PRUEBA DE FUNCION
 
-        for (int i = 0; i < cityRestaurants.getRestaurants().size() ; i++) {
-            CityRestaurants restaurant = cityRestaurants.getRestaurants().get(i);
+        for (int i = 0; i < platform.getRestaurants().size() ; i++) {
+            CityRestaurants restaurant = platform.getRestaurants().get(i);
             System.out.println("Resturante Numero: " + i);
             System.out.println("nombre de restaurante: " + restaurant.getRestaurantName());
             System.out.println("NIT" + restaurant.getNit());

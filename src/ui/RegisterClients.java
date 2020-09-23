@@ -2,17 +2,18 @@ package ui;
 
 import model.CityRestaurants;
 import model.Client;
-
+import model.Platform;
 import java.util.Scanner;
 
 public class RegisterClients {
+
     Scanner scan = new Scanner(System.in);
     int opt ;
-   // Client client = new Client("", "", "", "", "");
-   CityRestaurants cityRestaurants;
+
+    Platform platform;
 
     public RegisterClients(){
-        cityRestaurants = new CityRestaurants("","","");
+        platform = new Platform();
     }
 
     public void registerClients(){
@@ -40,12 +41,12 @@ public class RegisterClients {
                     address
             );
 
-            cityRestaurants.addClients(clients);
+            platform.addClients(clients);
             System.out.println("El cliente se ha registrado de manera exictosa");
         }
         //Prueba de funcion
-        for (int i = 0; i < cityRestaurants.getClients().size() ; i++) {
-            Client client = cityRestaurants.getClients().get(i);
+        for (int i = 0; i < platform.getClients().size() ; i++) {
+            Client client = platform.getClients().get(i);
             System.out.println("Resturante Numero: " + i);
             System.out.println("codigo de producto es : " + client.getFullClientName());
             System.out.println("el nombre del producto es: " + client.getIdType());

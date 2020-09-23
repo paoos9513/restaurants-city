@@ -1,12 +1,14 @@
 package ui;
 
 import model.CityRestaurants;
+import model.Platform;
 
 public class Main {
-    CityRestaurants cityRestaurants;
+
+    Platform platform;
 
     public Main() {
-       cityRestaurants = new CityRestaurants("La tatro","65433","popocho");
+        platform = new Platform();
         new Menu();
     }
 

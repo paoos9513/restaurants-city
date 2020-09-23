@@ -1,6 +1,7 @@
 package ui;
 
 import model.CityRestaurants;
+import model.Platform;
 import model.Product;
 
 import java.util.Scanner;
@@ -9,9 +10,10 @@ public class RegisterProducts {
     Scanner scan = new Scanner(System.in);
     int opt ;
 
-    CityRestaurants cityRestaurants ;
+    Platform platform;
+
     public RegisterProducts(){
-        cityRestaurants = new CityRestaurants("","","");
+        platform = new Platform();
     }
 
     public void registerProducts(){
@@ -39,12 +41,12 @@ public class RegisterProducts {
                     productValue
             );
 
-            cityRestaurants.addProducts(product);
+            platform.addProducts(product);
             System.out.println("El producto se ha registrado de manera exictosa");
         }
         //Prueba prueba
-        for (int i = 0; i < cityRestaurants.getProducts().size() ; i++) {
-            Product product = cityRestaurants.getProducts().get(i);
+        for (int i = 0; i < platform.getProducts().size() ; i++) {
+            Product product = platform.getProducts().get(i);
             System.out.println("Resturante Numero: " + i);
             System.out.println("codugo de producto es : " + product.getProductCode());
             System.out.println("el nombre del producto es: " + product.getProductName());

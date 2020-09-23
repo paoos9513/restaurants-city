@@ -2,6 +2,7 @@ package ui;
 
 import model.CityRestaurants;
 import model.Order;
+import model.Platform;
 
 import java.util.Date;
 import java.util.Scanner;
@@ -9,9 +10,11 @@ import java.util.Scanner;
 public class RegisterOrder {
     Scanner scan = new Scanner(System.in);
     int opt ;
-    CityRestaurants cityRestaurants;
+
+    Platform platform;
+
     public RegisterOrder(){
-        cityRestaurants = new CityRestaurants("","","");
+       platform = new Platform();
     }
 
     public void registerOrder(){
@@ -44,12 +47,12 @@ public class RegisterOrder {
                                     listProduct
             );
 
-            cityRestaurants.addOrders(order);
+            platform.addOrders(order);
             System.out.println("El cliente se ha registrado de manera exictosa");
         }
         //Prueba de funcion
-        for (int i = 0; i < cityRestaurants.getOrders().size() ; i++) {
-            Order order = cityRestaurants.getOrders().get(i);
+        for (int i = 0; i < platform.getOrders().size() ; i++) {
+            Order order = platform.getOrders().get(i);
             System.out.println("Resturante Numero: " + i);
             System.out.println("codigo de order es :" + order.getOrderCode());
             System.out.println("codigo de producto es  :" + order.getCodeProduct());
