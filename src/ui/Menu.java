@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Menu {
     Scanner scan = new Scanner(System.in);
     int opt;
-    CityRestaurants cityRestaurants;
+
     RegisterRestaurants registerTheRestaurant = new RegisterRestaurants();
     RegisterProducts registerTheProduct = new RegisterProducts();
     RegisterClients registerTheClient = new RegisterClients();
@@ -26,7 +26,7 @@ public class Menu {
     }
 
     public void menu(){
-        while (opt!=13) {
+        while (opt!=15) {
             System.out.println(" ");
             System.out.println("----------------MENU----------------");
             System.out.println("Select the option you want \n");
@@ -43,10 +43,11 @@ public class Menu {
                     "(11).Save Update \n" +
                     "(12).Print \n" +
                     "(13).Import \n" +
-                    "(14).Closed \n"
+                    "(14).Show data base \n" +
+                    "(15).Closed \n"
             );
-        opt = Integer.parseInt(scan.nextLine());
 
+            opt = Integer.parseInt(scan.nextLine());
 
             switch (opt) {
 
@@ -94,8 +95,12 @@ public class Menu {
                 case 12:
 
                     break;
-
                 case 13:
+                    break;
+                case 14:
+                    new SubMenu();
+                    break;
+                case 15:
                     scan.close();
                     break;
                 default:

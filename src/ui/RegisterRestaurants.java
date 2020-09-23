@@ -1,6 +1,7 @@
 package ui;
 
 import model.CityRestaurants;
+
 import java.util.Scanner;
 
 public class RegisterRestaurants {
@@ -8,13 +9,13 @@ public class RegisterRestaurants {
     Scanner scan = new Scanner(System.in);
     int opt ;
 
-    CityRestaurants cityRestaurants = new CityRestaurants("","","");
-
+   CityRestaurants cityRestaurants ;
     public RegisterRestaurants (){
-            cityRestaurants.initRestaurants();
+        cityRestaurants = new CityRestaurants("","","");
     }
 
     public void registerRestaurants(){
+        cityRestaurants.initRestaurants();
         System.out.println("How many restaurants do you want to register?");
         opt = Integer.parseInt(scan.nextLine());
 
@@ -50,4 +51,5 @@ public class RegisterRestaurants {
         }
 
     }
+
 }

@@ -2,7 +2,6 @@ package ui;
 
 import model.CityRestaurants;
 import model.Client;
-import model.Product;
 
 import java.util.Scanner;
 
@@ -10,9 +9,10 @@ public class RegisterClients {
     Scanner scan = new Scanner(System.in);
     int opt ;
    // Client client = new Client("", "", "", "", "");
-    CityRestaurants cityRestaurants = new CityRestaurants("","","");
-    public RegisterClients(){
+   CityRestaurants cityRestaurants;
 
+    public RegisterClients(){
+        cityRestaurants = new CityRestaurants("","","");
     }
 
     public void registerClients(){

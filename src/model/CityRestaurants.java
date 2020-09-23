@@ -1,5 +1,7 @@
 package model;
 
+import ui.RegisterRestaurants;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,24 +11,20 @@ public class CityRestaurants {
     private String nit;
     private String administratorName;
 
-    private  ArrayList<CityRestaurants> restaurants = new ArrayList<>();
-    private ArrayList<Client> clients = new ArrayList<>();
-    private ArrayList<Product> products = new ArrayList<>();
-    private ArrayList<Order> orders = new ArrayList<>();
+    private ArrayList<CityRestaurants> restaurants = new ArrayList<>();
+    ArrayList<Client> clients = new ArrayList<>();
+    ArrayList<Product> products = new ArrayList<>();
+    ArrayList<Order> orders = new ArrayList<>();
 
     public CityRestaurants(String restaurantName, String nit, String administratorName) {
         this.restaurantName = restaurantName;
         this.nit = nit;
         this.administratorName = administratorName;
+        //initRestaurants();
     }
-
-    public void addRestaurants( CityRestaurants restaurants){
-        this.restaurants.add(restaurants);
-    }
-
 
     public void initRestaurants(){
-        restaurants.add( new CityRestaurants( "Crepes&Crepes",
+        restaurants.add(new CityRestaurants( "Crepes&Crepes",
                 "12345",
                 "Jhon Osorio" )
         );
@@ -40,7 +38,14 @@ public class CityRestaurants {
                 "1234598",
                 "Marwar Malaver" )
         );
+    }
 
+    public void addRestaurants( CityRestaurants restaurant){
+        this.restaurants.add(restaurant);
+    }
+
+    public ArrayList<CityRestaurants> getRestaurants() {
+        return restaurants;
     }
     public void addProducts( Product products){
         this.products.add(products);
@@ -78,10 +83,6 @@ public class CityRestaurants {
         this.administratorName = administratorName;
     }
 
-    public ArrayList<CityRestaurants> getRestaurants() {
-        return restaurants;
-    }
-
     public void setRestaurants(ArrayList<CityRestaurants> restaurants) {
         this.restaurants = restaurants;
     }
@@ -109,6 +110,8 @@ public class CityRestaurants {
     public void setOrders(ArrayList<Order> orders) {
         this.orders = orders;
     }
+
+
 }
 
 

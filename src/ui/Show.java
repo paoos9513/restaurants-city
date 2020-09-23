@@ -2,18 +2,21 @@ package ui;
 
 import model.CityRestaurants;
 import model.Client;
+import model.Order;
 import model.Product;
 
-import java.util.Scanner;
+
 
 public class Show {
-    Scanner scan = new Scanner(System.in);
-    CityRestaurants cityRestaurants = new CityRestaurants("","","");
+    CityRestaurants cityRestaurants ;
+
     public Show(){
-        cityRestaurants.initRestaurants();
+        cityRestaurants = new CityRestaurants("","","");
+
     }
 
     public void showRestaurants(){
+        cityRestaurants.initRestaurants();
         for (int i = 0; i < cityRestaurants.getRestaurants().size() ; i++) {
             CityRestaurants restaurant = cityRestaurants.getRestaurants().get(i);
             System.out.println("Resturante Numero: " + i);
@@ -50,6 +53,18 @@ public class Show {
     }
 
     public void showOrder(){
+        for (int i = 0; i < cityRestaurants.getOrders().size() ; i++) {
+            Order order = cityRestaurants.getOrders().get(i);
+            System.out.println("Resturante Numero: " + i);
+            System.out.println("codigo de order es :" + order.getOrderCode());
+            System.out.println("codigo de producto es  :" + order.getCodeProduct());
+            System.out.println("La cantidad es : " + order.getQuantity());
+            System.out.println("Fecha solicitud: " + order.getDate());
+            System.out.println("hora solicitud: " + order.getDate());
+            System.out.println("el id cliente es : " + order.getIdClient());
+            System.out.println("el nit de restaurante es : " + order.getNitRestaurant());
+            System.out.println("Lista de Productos : " + order.getListProducts());
 
+        }
     }
 }

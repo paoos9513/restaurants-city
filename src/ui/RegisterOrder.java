@@ -1,7 +1,6 @@
 package ui;
 
 import model.CityRestaurants;
-import model.Client;
 import model.Order;
 
 import java.util.Date;
@@ -10,10 +9,9 @@ import java.util.Scanner;
 public class RegisterOrder {
     Scanner scan = new Scanner(System.in);
     int opt ;
-    CityRestaurants cityRestaurants = new CityRestaurants("","","");
-   // Order order = new Order(0,0,0, "", "","","","");
+    CityRestaurants cityRestaurants;
     public RegisterOrder(){
-
+        cityRestaurants = new CityRestaurants("","","");
     }
 
     public void registerOrder(){

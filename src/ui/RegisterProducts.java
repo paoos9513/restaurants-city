@@ -9,10 +9,9 @@ public class RegisterProducts {
     Scanner scan = new Scanner(System.in);
     int opt ;
 
-    CityRestaurants cityRestaurants = new CityRestaurants("","","");
-
+    CityRestaurants cityRestaurants ;
     public RegisterProducts(){
-
+        cityRestaurants = new CityRestaurants("","","");
     }
 
     public void registerProducts(){
