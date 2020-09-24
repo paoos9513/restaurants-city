@@ -3,6 +3,11 @@ package model;
 import java.util.Date;
 
 public class Order {
+
+    private final static String REQUESTED = "Requested";
+    private final static String PROCESS = "Process";
+    private final static String SENT = "Sent";
+
     private int orderCode;
     private int codeProduct;
     private int quantity;
@@ -88,5 +93,17 @@ public class Order {
 
     public void setListProducts(String listProducts) {
         this.listProducts = listProducts;
+    }
+
+    public static String getREQUESTED() {
+        return REQUESTED;
+    }
+
+    public static String getPROCESS() {
+        return PROCESS;
+    }
+
+    public static String getSENT() {
+        return SENT;
     }
 }

@@ -13,7 +13,7 @@ public class RegisterClients {
     Platform platform;
 
     public RegisterClients(){
-        platform = new Platform();
+        platform = Platform.getInstance();
     }
 
     public void registerClients(){

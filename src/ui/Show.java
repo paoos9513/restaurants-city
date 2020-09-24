@@ -6,11 +6,11 @@ public class Show {
     Platform platform;
 
     public Show(){
-       platform = new Platform();
+        platform = Platform.getInstance();
     }
 
     public void showRestaurants(){
-        //platform.getRestaurants();
+
         for (int i = 0; i < platform.getRestaurants().size() ; i++) {
             CityRestaurants restaurant = platform.getRestaurants().get(i);
             System.out.println("Resturante Numero: " + i);

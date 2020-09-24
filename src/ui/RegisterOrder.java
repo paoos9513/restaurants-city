@@ -14,7 +14,7 @@ public class RegisterOrder {
     Platform platform;
 
     public RegisterOrder(){
-       platform = new Platform();
+        platform = Platform.getInstance();
     }
 
     public void registerOrder(){
@@ -35,6 +35,12 @@ public class RegisterOrder {
             System.out.println("Enter NIT");
             String nitRestaurant = scan.nextLine();
             String listProduct = scan.nextLine();
+
+            System.out.println("Enter de order status");
+            System.out.println("(1).REQUESTED");
+            System.out.println("(2).PROCESS");
+            System.out.println("(3).SENT");
+            int state = Integer.parseInt(scan.nextLine());
             //Falta la lista de productos
 
             Order order = new Order(orderCode,
@@ -62,7 +68,7 @@ public class RegisterOrder {
             System.out.println("el id cliente es : " + order.getIdClient());
             System.out.println("el nit de restaurante es : " + order.getNitRestaurant());
             System.out.println("Lista de Productos : " + order.getListProducts());
-
+            System.out.println("Status: " );
         }
     }
 }

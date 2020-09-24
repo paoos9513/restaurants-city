@@ -13,6 +13,7 @@ public class Menu {
     RegisterProducts registerTheProduct = new RegisterProducts();
     RegisterClients registerTheClient = new RegisterClients();
     RegisterOrder registerTheOrder= new RegisterOrder();
+    UpdateInformation updateInformation;
 
     public Menu (){
         show();
@@ -67,7 +68,7 @@ public class Menu {
                     break;
 
                 case 5:
-
+                    updateInformation.updateRestaurantShow();
                     break;
 
                 case 6:
@@ -81,7 +82,7 @@ public class Menu {
                     break;
 
                 case 9:
-
+                    updateInformation.updateOrderShow();
                     break;
 
                 case 10:

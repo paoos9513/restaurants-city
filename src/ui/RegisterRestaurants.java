@@ -3,6 +3,7 @@ package ui;
 import model.CityRestaurants;
 import model.Platform;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class RegisterRestaurants {
@@ -12,7 +13,7 @@ public class RegisterRestaurants {
     Platform platform;
 
     public RegisterRestaurants (){
-        platform= new Platform();
+        platform = Platform.getInstance();
     }
 
     public void registerRestaurants(){
@@ -22,10 +23,10 @@ public class RegisterRestaurants {
 
         for(int i = 0; i<opt; i++){
 
-            System.out.println("Enter restaurant name");
-            String restaurantsName = scan.nextLine();
             System.out.println("Enter NIT");
             String nitRestaurants = scan.nextLine();
+            System.out.println("Enter restaurant name");
+            String restaurantsName = scan.nextLine();
             System.out.println("Enter administration name");
             String administrationsName = scan.nextLine();
 

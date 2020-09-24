@@ -9,10 +9,20 @@ public class Platform {
     private ArrayList<Product> products = new ArrayList<>();
     private ArrayList<Order> orders = new ArrayList<>();
 
-    public Platform(){
+    //Singleton SIRVE PARA RETORNARME LO QUE CONTIENE EN TODAS LAS CLASES o sea me da una instancia unica para todas las clases
+    private static Platform platform;
 
-       initRestaurants();
+    public Platform(){
+        initRestaurants();
     }
+
+    public static Platform getInstance(){
+        if(platform == null){
+            platform = new Platform();
+        }
+        return  platform;
+    }
+
 
     public void initRestaurants(){
 
@@ -40,6 +50,7 @@ public class Platform {
     public ArrayList<CityRestaurants> getRestaurants() {
         return restaurants;
     }
+
     public void addProducts( Product products){
         this.products.add(products);
     }
@@ -79,4 +90,5 @@ public class Platform {
     public void setOrders(ArrayList<Order> orders) {
         this.orders = orders;
     }
+
 }

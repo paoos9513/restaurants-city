@@ -13,7 +13,7 @@ public class RegisterProducts {
     Platform platform;
 
     public RegisterProducts(){
-        platform = new Platform();
+        platform = Platform.getInstance();
     }
 
     public void registerProducts(){

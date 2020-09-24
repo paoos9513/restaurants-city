@@ -14,7 +14,6 @@ public class CityRestaurants {
 
     }
 
-
     public String getRestaurantName() {
         return restaurantName;
     }

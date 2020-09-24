@@ -5,10 +5,11 @@ import java.util.Scanner;
 public class SubMenu {
     Scanner scan = new Scanner(System.in);
     int opt;
+
     Show show = new Show();
+
     public SubMenu(){
         subMenu();
-
     }
 
     public void subMenu(){
