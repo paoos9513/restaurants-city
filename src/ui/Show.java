@@ -58,7 +58,7 @@ public class Show {
             System.out.println("el id cliente es : " + order.getIdClient());
             System.out.println("el nit de restaurante es : " + order.getNitRestaurant());
             System.out.println("Lista de Productos : " + order.getListProducts());
-
+            System.out.println("Estado del pedido : " + order.getState() );
         }
     }
 }

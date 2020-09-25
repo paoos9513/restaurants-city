@@ -12,15 +12,17 @@ public class RegisterOrder {
     int opt ;
 
     Platform platform;
+    UpdateInformation updateInformation;
 
     public RegisterOrder(){
         platform = Platform.getInstance();
     }
 
     public void registerOrder(){
-
+        String state = " ";
         System.out.println("How many orders do you want to register?");
         opt = Integer.parseInt(scan.nextLine());
+
 
         for(int i = 0; i<opt; i++){
             int orderCode = (int)(1000000 * Math.random());
@@ -28,8 +30,12 @@ public class RegisterOrder {
             int codeProduct = Integer.parseInt(scan.nextLine());
             System.out.println("Enter the amount");
             int quantity = Integer.parseInt(scan.nextLine());
+
+            //organizar bien la hora y la fecha, por aparte
+
             Date date = new Date();
             Date hour= new Date();
+
             System.out.println("Enter the document number");
             String idClient = scan.nextLine();
             System.out.println("Enter NIT");
@@ -40,9 +46,21 @@ public class RegisterOrder {
             System.out.println("(1).REQUESTED");
             System.out.println("(2).PROCESS");
             System.out.println("(3).SENT");
-            int state = Integer.parseInt(scan.nextLine());
-            //Falta la lista de productos
 
+            int stateOpt = Integer.parseInt(scan.nextLine());
+
+            if (stateOpt == 1){
+                state = "Requested";
+            }else if (stateOpt==2){
+                state = "Process";
+            }else if (stateOpt==3){
+                state = "Sent";
+            }else {
+                System.out.println("The option incorrect");
+            }
+
+            //updateInformation.updateStatusOrder(state);
+            //Falta la lista de productos
             Order order = new Order(orderCode,
                                     codeProduct,
                                     quantity,
@@ -50,13 +68,14 @@ public class RegisterOrder {
                                     hour,
                                     idClient,
                                     nitRestaurant,
-                                    listProduct
+                                    listProduct,
+                                    state
             );
-
             platform.addOrders(order);
-            System.out.println("El cliente se ha registrado de manera exictosa");
+            System.out.println("La orden se ha registrado de manera exictosa");
         }
         //Prueba de funcion
+
         for (int i = 0; i < platform.getOrders().size() ; i++) {
             Order order = platform.getOrders().get(i);
             System.out.println("Resturante Numero: " + i);
@@ -68,7 +87,7 @@ public class RegisterOrder {
             System.out.println("el id cliente es : " + order.getIdClient());
             System.out.println("el nit de restaurante es : " + order.getNitRestaurant());
             System.out.println("Lista de Productos : " + order.getListProducts());
-            System.out.println("Status: " );
+            System.out.println("Status: " +  order.getState());
         }
     }
 }

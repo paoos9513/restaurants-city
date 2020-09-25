@@ -16,18 +16,21 @@ public class Order {
     private String idClient;
     private String nitRestaurant;
     private String listProducts;
+    private String state;
 
 
-    public Order(int orderCode, int codeProduct, int quantity, Date date, Date hour, String idClient, String nitRestaurant, String listProducts) {
+
+    public Order(int orderCode, int codeProduct, int quantity, Date date, Date hour, String idClient, String nitRestaurant, String listProducts, String state) {
         this.orderCode = orderCode;
         this.codeProduct = codeProduct;
         this.quantity = quantity;
-        this.date = date;
+        this.date = new Date();
         this.hour = hour;
         this.idClient = idClient;
         this.nitRestaurant = nitRestaurant;
         this.listProducts = listProducts;
-        date = new Date();
+        this.state = state;
+        //date = new Date();
 
     }
 
@@ -105,5 +108,13 @@ public class Order {
 
     public static String getSENT() {
         return SENT;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
     }
 }

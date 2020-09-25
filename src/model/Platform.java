@@ -14,8 +14,9 @@ public class Platform {
 
     public Platform(){
         initRestaurants();
+        initProducts();
     }
-
+//metodo para cla
     public static Platform getInstance(){
         if(platform == null){
             platform = new Platform();
@@ -47,8 +48,32 @@ public class Platform {
         this.restaurants.add(restaurant);
     }
 
-    public ArrayList<CityRestaurants> getRestaurants() {
-        return restaurants;
+    public void initProducts(){
+
+        products.add(new Product( 1232,
+                "Hamburger",
+                "Hamburguesa sencilla con papas a la francesa",
+                "123456789",
+                14500
+                )
+        );
+
+        products.add(new Product( 12332,
+                        "HotDog",
+                        "Perro caliente con gaseosa",
+                        "1232322",
+                        12000
+                )
+        );
+
+        products.add(new Product( 3056,
+                        "Crepes Mixto",
+                        "Crepes con pollo, carne de rez y cordero",
+                        "12345",
+                        14600
+                )
+        );
+
     }
 
     public void addProducts( Product products){
@@ -89,6 +114,9 @@ public class Platform {
 
     public void setOrders(ArrayList<Order> orders) {
         this.orders = orders;
+    }
+    public ArrayList<CityRestaurants> getRestaurants() {
+        return restaurants;
     }
 
 }
