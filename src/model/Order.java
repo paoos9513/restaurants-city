@@ -14,7 +14,7 @@ public class Order {
     private String idClient;
     private String nitRestaurant;
     private String listProducts;
-    private String state;
+        private String state;
     ArrayList<Product> products = new ArrayList<>();
 
     public Order(String orderCode, String codeProduct, int quantity, Date date, Date hour, String idClient, String nitRestaurant, String listProducts, String state) {
