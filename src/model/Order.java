@@ -4,14 +4,11 @@ import java.util.Date;
 
 public class Order {
 
-    private final static String REQUESTED = "Requested";
-    private final static String PROCESS = "Process";
-    private final static String SENT = "Sent";
 
-    private int orderCode;
+    private String orderCode;
     private String codeProduct;
     private int quantity;
-    private Date date ;
+    private Date date;
     private Date hour;
     private String idClient;
     private String nitRestaurant;
@@ -19,8 +16,7 @@ public class Order {
     private String state;
 
 
-
-    public Order(int orderCode, String codeProduct, int quantity, Date date, Date hour, String idClient, String nitRestaurant, String listProducts, String state) {
+    public Order(String orderCode, String codeProduct, int quantity, Date date, Date hour, String idClient, String nitRestaurant, String listProducts, String state) {
         this.orderCode = orderCode;
         this.codeProduct = codeProduct;
         this.quantity = quantity;
@@ -34,11 +30,11 @@ public class Order {
 
     }
 
-    public int getOrderCode() {
-        return orderCode = (int)(1000000 * Math.random());
+    public String getOrderCode() {
+        return orderCode;
     }
 
-    public void setOrderCode(int orderCode) {
+    public void setOrderCode(String orderCode) {
         this.orderCode = orderCode;
     }
 
@@ -96,18 +92,6 @@ public class Order {
 
     public void setListProducts(String listProducts) {
         this.listProducts = listProducts;
-    }
-
-    public static String getREQUESTED() {
-        return REQUESTED;
-    }
-
-    public static String getPROCESS() {
-        return PROCESS;
-    }
-
-    public static String getSENT() {
-        return SENT;
     }
 
     public String getState() {

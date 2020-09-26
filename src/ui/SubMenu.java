@@ -8,24 +8,24 @@ public class SubMenu {
 
     Show show = new Show();
 
-    public SubMenu(){
+    public SubMenu() {
         subMenu();
     }
 
-    public void subMenu(){
-        while (opt!=5) {
+    public void subMenu() {
+        while (opt != 5) {
             System.out.println(" ");
             System.out.println("----------------SUB MENU----------------");
             System.out.println("Select the option you want \n");
-            System.out.println( "(1).Show Restaurants \n" +
-                                "(2). Show Products \n"  +
-                                "(3). Show Clients \n" +
-                                "(4). Show Orders \n" +
-                                "(5). EXIT \n"
+            System.out.println("(1).Show Restaurants \n" +
+                    "(2). Show Products \n" +
+                    "(3). Show Clients \n" +
+                    "(4). Show Orders \n" +
+                    "(5). EXIT \n"
             );
 
             opt = Integer.parseInt(scan.nextLine());
-            switch (opt){
+            switch (opt) {
                 case 1:
                     show.showRestaurants();
                     break;
@@ -49,7 +49,7 @@ public class SubMenu {
         }
     }
 
-    public void subMenuUpdate(){
+    public void subMenuUpdate() {
 
 
     }

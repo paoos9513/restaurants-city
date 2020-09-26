@@ -9,19 +9,19 @@ import java.util.Scanner;
 public class RegisterRestaurants {
 
     Scanner scan = new Scanner(System.in);
-    int opt ;
+    int opt;
     Platform platform;
 
-    public RegisterRestaurants (){
+    public RegisterRestaurants() {
         platform = Platform.getInstance();
     }
 
-    public void registerRestaurants(){
+    public void registerRestaurants() {
 
         System.out.println("How many restaurants do you want to register?");
         opt = Integer.parseInt(scan.nextLine());
 
-        for(int i = 0; i<opt; i++){
+        for (int i = 0; i < opt; i++) {
 
             System.out.println("Enter NIT");
             String nitRestaurants = scan.nextLine();
@@ -43,7 +43,7 @@ public class RegisterRestaurants {
 
         //PRUEBA PRUEBA DE FUNCION
 
-        for (int i = 0; i < platform.getRestaurants().size() ; i++) {
+        for (int i = 0; i < platform.getRestaurants().size(); i++) {
             CityRestaurants restaurant = platform.getRestaurants().get(i);
             System.out.println("Resturante Numero: " + i);
             System.out.println("nombre de restaurante: " + restaurant.getRestaurantName());

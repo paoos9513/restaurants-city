@@ -1,9 +1,6 @@
 package ui;
 
-import model.CityRestaurants;
-import model.Order;
 import model.Platform;
-import model.Product;
 
 import java.util.Scanner;
 
@@ -131,7 +128,7 @@ public class UpdateInformation {
                         "(2).Document type \n" +
                         "(3).Document number \n" +
                         "(4).Telephone number \n" +
-                        "(4).Address\n"
+                        "(5).Address\n"
 
                 );
                 opt = Integer.parseInt(scan.nextLine());
@@ -139,7 +136,7 @@ public class UpdateInformation {
                     case 1:
                         System.out.println("Enter the new customer's full name");
                         String fullClientName = scan.nextLine();
-                        platform.getClients().get(i).setFullClientName(fullClientName);
+                        platform.getClients().get(i).setClientName(fullClientName);
                         break;
                     case 2:
                         System.out.println("Enter new document type");
@@ -147,11 +144,16 @@ public class UpdateInformation {
                         platform.getClients().get(i).setIdType(idType);
                         break;
                     case 3:
+                        System.out.println("Enter the new document number");
+                        String numberId = scan.nextLine();
+                        platform.getClients().get(i).setNumberId(numberId);
+                        break;
+                    case 4:
                         System.out.println("Enter the new telephone number");
                         String telephone = scan.nextLine();
                         platform.getClients().get(i).setTelephone(telephone);
                         break;
-                    case 4:
+                    case 5:
                         System.out.println("Enter the new address");
                         String address = scan.nextLine();
                         platform.getClients().get(i).setAddress(address);
@@ -169,55 +171,127 @@ public class UpdateInformation {
         }
     }
 
-    // registra la actualizacion de una orden
+    // registra la actualizacion de una orden //arreglar el estado de la orden !!!!!!!!!!!!!!!!!!!!!!!!
 
     public void updateOrder() {
 
         System.out.println("Enter the code of the order you want to update");
-        int codeOrderSearch = Integer.parseInt(scan.nextLine());
+        String codeOrderSearch = scan.nextLine();
 
-        for (int i = 0; i < platform.getClients().size(); i++) {
+        for (int i = 0; i < platform.getOrders().size(); i++) {
 
-            if (codeOrderSearch == (platform.getOrders().get(i).getOrderCode())) {
+            if (codeOrderSearch.equals(platform.getOrders().get(i).getOrderCode())) {
 
                 System.out.println(" ");
                 System.out.println("----------------UPDATE----------------");
                 System.out.println("Select the option you want to update \n");
-                System.out.println("(1).Client name \n" +
-                        "(2).Document type \n" +
-                        "(3).Document number \n" +
-                        "(4).Telephone number \n" +
-                        "(4).Address\n"
+                System.out.println("(1).Product code \n" +
+                        "(2).The amount \n" +
+                        "(3).Customer document \n" +
+                        "(4).NIT of the restaurant that the order belong to \n" +
+                        "(5).Order status \n"
 
                 );
                 opt = Integer.parseInt(scan.nextLine());
                 switch (opt) {
                     case 1:
-                        System.out.println("Enter the new customer's full name");
-                        String fullClientName = scan.nextLine();
-                        platform.getClients().get(i).setFullClientName(fullClientName);
+                        System.out.println("Enter new product code");
+                        String codeProduct = scan.nextLine();
+                        platform.getOrders().get(i).setCodeProduct(codeProduct);
                         break;
                     case 2:
-                        System.out.println("Enter new document type");
-                        String idType = scan.nextLine();
-                        platform.getClients().get(i).setIdType(idType);
+                        System.out.println("Enter the new amount");
+                        int quantity = Integer.parseInt(scan.nextLine());
+                        platform.getOrders().get(i).setQuantity(quantity);
                         break;
                     case 3:
-                        System.out.println("Enter the new telephone number");
-                        String telephone = scan.nextLine();
-                        platform.getClients().get(i).setTelephone(telephone);
+                        System.out.println("Enter the customer's document number");
+                        String idClient = scan.nextLine();
+                        platform.getOrders().get(i).setIdClient(idClient);
                         break;
                     case 4:
-                        System.out.println("Enter the new address");
-                        String address = scan.nextLine();
-                        platform.getClients().get(i).setAddress(address);
+                        System.out.println("Enter the new NIT of the restaurant that the order belong to");
+                        String nitRestaurant = scan.nextLine();
+                        platform.getOrders().get(i).setNitRestaurant(nitRestaurant);
+                        break;
+                    case 5:
+                        System.out.println("Enter the new order status");
+                        System.out.println("(1).PROCESS");
+                        System.out.println("(2).SENT");
+                        System.out.println("(3).DELIVERED");
+                        int stateOpt = Integer.parseInt(scan.nextLine());
+                        int election = 0;
+                        String state = "";
+                        /**
+
+                         } else if (platform.getOrders().get(i).getState().equalsIgnoreCase("Process")) {
+                         election = 1;
+                         state = "Process";
+                         } else if (platform.getOrders().get(i).getState().equalsIgnoreCase("Sent")) {
+                         election = 2;
+                         state = "Sent";
+                         } else {
+                         election = 3;
+                         state = "Delivered";
+                         }
+                         **/
+                        switch (stateOpt) {
+                            case 1:
+                                if (platform.getOrders().get(i).getState().equalsIgnoreCase("Requested")) {
+                                    System.out.println("No se puede ejecutar esta accion");
+                                } else if (platform.getOrders().get(i).getState().equalsIgnoreCase("Process")) {
+                                    state = "Process";
+                                    platform.getOrders().get(i).setState(state);
+                                } else {
+                                    System.out.println("option incorrect");
+                                }
+                                break;
+                            case 2:
+                                if (platform.getOrders().get(i).getState().equalsIgnoreCase("Requested")) {
+                                    System.out.println("No se puede ejecutar esta accion");
+
+                                } else if (platform.getOrders().get(i).getState().equalsIgnoreCase("Process")) {
+                                    state = "Sent";
+                                    platform.getOrders().get(i).setState(state);
+
+                                } else if (platform.getOrders().get(i).getState().equalsIgnoreCase("Sent")) {
+                                    state = "Sent";
+                                    platform.getOrders().get(i).setState(state);
+                                } else {
+                                    System.out.println("option incorrect");
+                                }
+                                break;
+
+                            case 3:
+
+                                if (platform.getOrders().get(i).getState().equalsIgnoreCase("Requested")) {
+                                    System.out.println("No se puede ejecutar esta accion");
+
+                                } else if (platform.getOrders().get(i).getState().equalsIgnoreCase("Process")) {
+                                    System.out.println("No se puede ejecutar esta accion");
+
+                                } else if (platform.getOrders().get(i).getState().equalsIgnoreCase("Sent")) {
+                                    state = "Sent";
+                                    platform.getOrders().get(i).setState(state);
+                                } else if (platform.getOrders().get(i).getState().equalsIgnoreCase("Delivered")) {
+                                    state = "Delivered";
+                                    platform.getOrders().get(i).setState(state);
+                                } else {
+                                    System.out.println("option incorrect");
+                                }
+                                break;
+                            default: System.out.println("The option is incorrect");
+                        }
+
+                        platform.getOrders().get(i).setState(state);
+
+
                         break;
                     default:
                         System.out.println("the option incorrect");
                 }
                 System.out.println("se ha actualizado de forma exitosa ");
             } else {
-
                 System.out.println("The Client doest not exist");
             }
 

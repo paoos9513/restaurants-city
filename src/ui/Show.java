@@ -5,13 +5,13 @@ import model.*;
 public class Show {
     Platform platform;
 
-    public Show(){
+    public Show() {
         platform = Platform.getInstance();
     }
 
-    public void showRestaurants(){
+    public void showRestaurants() {
 
-        for (int i = 0; i < platform.getRestaurants().size() ; i++) {
+        for (int i = 0; i < platform.getRestaurants().size(); i++) {
             CityRestaurants restaurant = platform.getRestaurants().get(i);
             System.out.println("Resturante Numero: " + i);
             System.out.println("nombre de restaurante: " + restaurant.getRestaurantName());
@@ -20,8 +20,9 @@ public class Show {
 
         }
     }
-    public void showProducts(){
-        for (int i = 0; i < platform.getProducts().size() ; i++) {
+
+    public void showProducts() {
+        for (int i = 0; i < platform.getProducts().size(); i++) {
             Product product = platform.getProducts().get(i);
             System.out.println("Resturante Numero: " + i);
             System.out.println("codugo de producto es : " + product.getProductCode());
@@ -33,11 +34,12 @@ public class Show {
         }
     }
 
-    public void showClients(){
-        for (int i = 0; i < platform.getClients().size() ; i++) {
+    public void showClients() {
+        platform.sortClients();
+        for (int i = 0; i < platform.getClients().size(); i++) {
             Client client = platform.getClients().get(i);
             System.out.println("Resturante Numero: " + i);
-            System.out.println("codigo de producto es : " + client.getFullClientName());
+            System.out.println("codigo de producto es : " + client.getClientName() + " " + client.clientLastName);
             System.out.println("el nombre del producto es: " + client.getIdType());
             System.out.println("la descripcion del producto es : " + client.getNumberId());
             System.out.println("el nit del restaurante es : " + client.getTelephone());
@@ -46,8 +48,8 @@ public class Show {
         }
     }
 
-    public void showOrder(){
-        for (int i = 0; i < platform.getOrders().size() ; i++) {
+    public void showOrder() {
+        for (int i = 0; i < platform.getOrders().size(); i++) {
             Order order = platform.getOrders().get(i);
             System.out.println("Resturante Numero: " + i);
             System.out.println("codigo de order es :" + order.getOrderCode());
@@ -58,7 +60,7 @@ public class Show {
             System.out.println("el id cliente es : " + order.getIdClient());
             System.out.println("el nit de restaurante es : " + order.getNitRestaurant());
             System.out.println("Lista de Productos : " + order.getListProducts());
-            System.out.println("Estado del pedido : " + order.getState() );
+            System.out.println("Estado del pedido : " + order.getState());
         }
     }
 }

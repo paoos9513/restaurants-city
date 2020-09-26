@@ -1,26 +1,28 @@
 package model;
 
-public class Client {
-    public String fullClientName;
+public class Client implements Comparable<Client>{
+    public String clientName;
+    public String clientLastName;
     public String idType;
     public String numberId;
     public String telephone;
     public String address;
 
-    public Client(String fullClientName, String idType, String numberId, String telephone, String address) {
-        this.fullClientName = fullClientName;
+    public Client(String clientName,String clientLastName, String idType, String numberId, String telephone, String address) {
+        this.clientName = clientName;
+        this.clientLastName = clientLastName;
         this.idType = idType;
         this.numberId = numberId;
         this.telephone = telephone;
         this.address = address;
     }
 
-    public String getFullClientName() {
-        return fullClientName;
+    public String getClientName() {
+        return clientName;
     }
 
-    public void setFullClientName(String fullClientName) {
-        this.fullClientName = fullClientName;
+    public void setClientName(String clientName) {
+        this.clientName = clientName;
     }
 
     public String getIdType() {
@@ -53,5 +55,23 @@ public class Client {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public String getClientLastName() {
+        return clientLastName;
+    }
+
+    public void setClientLastName(String clientLastName) {
+        this.clientLastName = clientLastName;
+    }
+
+    @Override
+    public int compareTo(Client o) {
+        return 0;
+    }
+
+    public String toString(){
+
+        return "Full name : " + clientLastName + clientName + " \nID : " + idType + "," +  numberId + " \nTelephone : " + telephone + "\nAddress : " + address;
     }
 }
