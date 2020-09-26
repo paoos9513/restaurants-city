@@ -1,11 +1,15 @@
 package model;
 
 
-public class CityRestaurants {
+import java.io.Serializable;
+import java.util.ArrayList;
+
+public class CityRestaurants implements Serializable {
 
     private String restaurantName;
     private String nit;
     private String administratorName;
+    private ArrayList<Product> products = new ArrayList<>();
 
     public CityRestaurants(String restaurantName, String nit, String administratorName) {
         this.restaurantName = restaurantName;
@@ -38,6 +42,9 @@ public class CityRestaurants {
         this.administratorName = administratorName;
     }
 
+    public void addProducts(Product products) {
+        this.products.add(products);
+    }
 
 }
 

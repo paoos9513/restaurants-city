@@ -10,20 +10,22 @@ public class Show {
     }
 
     public void showRestaurants() {
+        String restaurant1 = "";
 
         for (int i = 0; i < platform.getRestaurants().size(); i++) {
             CityRestaurants restaurant = platform.getRestaurants().get(i);
+            System.out.println(" ");
             System.out.println("Resturante Numero: " + i);
             System.out.println("nombre de restaurante: " + restaurant.getRestaurantName());
             System.out.println("NIT" + restaurant.getNit());
             System.out.println("nombre de ADMINISTRADOR: " + restaurant.getAdministratorName());
-
         }
     }
 
     public void showProducts() {
         for (int i = 0; i < platform.getProducts().size(); i++) {
             Product product = platform.getProducts().get(i);
+            System.out.println(" ");
             System.out.println("Resturante Numero: " + i);
             System.out.println("codugo de producto es : " + product.getProductCode());
             System.out.println("el nombre del producto es: " + product.getProductName());
@@ -38,6 +40,7 @@ public class Show {
         platform.sortClients();
         for (int i = 0; i < platform.getClients().size(); i++) {
             Client client = platform.getClients().get(i);
+            System.out.println(" ");
             System.out.println("Resturante Numero: " + i);
             System.out.println("codigo de producto es : " + client.getClientName() + " " + client.clientLastName);
             System.out.println("el nombre del producto es: " + client.getIdType());
@@ -46,11 +49,13 @@ public class Show {
             System.out.println("el precio del producto es : " + client.getAddress());
 
         }
+
     }
 
     public void showOrder() {
         for (int i = 0; i < platform.getOrders().size(); i++) {
             Order order = platform.getOrders().get(i);
+            System.out.println(" ");
             System.out.println("Resturante Numero: " + i);
             System.out.println("codigo de order es :" + order.getOrderCode());
             System.out.println("codigo de producto es  :" + order.getCodeProduct());

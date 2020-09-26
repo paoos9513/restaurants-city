@@ -57,4 +57,9 @@ public class Product {
     public void setProductValue(double productValue) {
         this.productValue = productValue;
     }
+
+    @Override
+    public String toString() {
+        return "Name : "+ productName + ", Code : " + ProductCode + ", Description : "+ productDescription + ", Price : "+ productValue + ", NIT restaurant : " + restaurantNit;
+    }
 }

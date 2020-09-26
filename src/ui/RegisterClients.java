@@ -27,32 +27,26 @@ public class RegisterClients {
             System.out.println("Enter the customer's name");
             String clientName = scan.nextLine();
 
-            System.out.println("Enter the customer's last name");
+            System.out.print("Enter the customer's last name");
             String clientLastName = scan.nextLine();
-            System.out.println("Enter document type");
+            System.out.print("Enter document type");
             String idType = scan.nextLine();
-            System.out.println("Enter the document number");
+            System.out.print("Enter the document number");
             String numberId = scan.nextLine();
             System.out.println("Enter the telephone number");
             String telephone = scan.nextLine();
             System.out.println("Enter the address");
             String address = scan.nextLine();
 
-            Client clients = new Client(clientName, clientLastName, idType, numberId, telephone, address);
-            if (platform.getClients().isEmpty()){
-                platform.addClients(clients);
-            }else {
-                int c = 0;
-                while (clients.getClientName().equals(platform.getClients().get(c).getClientName())){
-                    c++;
-                }
-                platform.addClients(clients);
-            }
-            platform.addClients(clients);
+            Client client = new Client(clientName, clientLastName, idType, numberId, telephone, address);
+
+            platform.addClients(client);
             System.out.println("El cliente se ha registrado de manera exictosa");
+
         }
         //Prueba de funcion
         for (int i = 0; i < platform.getClients().size(); i++) {
+            System.out.printf("");
             Client client = platform.getClients().get(i);
             System.out.println("Cliente : " + i);
             System.out.println("Nombre : " + client.getClientName() + " " + client.getClientLastName());

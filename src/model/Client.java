@@ -1,6 +1,11 @@
 package model;
 
-public class Client implements Comparable<Client>{
+import java.io.Serializable;
+
+public class Client implements Serializable {
+
+    private static final long serialVersionUID = 2;
+
     public String clientName;
     public String clientLastName;
     public String idType;
@@ -65,13 +70,8 @@ public class Client implements Comparable<Client>{
         this.clientLastName = clientLastName;
     }
 
-    @Override
     public int compareTo(Client o) {
         return 0;
     }
 
-    public String toString(){
-
-        return "Full name : " + clientLastName + clientName + " \nID : " + idType + "," +  numberId + " \nTelephone : " + telephone + "\nAddress : " + address;
-    }
 }

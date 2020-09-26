@@ -34,12 +34,7 @@ public class RegisterProducts {
             System.out.println("Enter product value");
             double productValue = Double.parseDouble(scan.nextLine());
 
-            Product product = new Product(productCode,
-                    productName,
-                    productDescription,
-                    restaurantNit,
-                    productValue
-            );
+            Product product = new Product(productCode,productName,productDescription,restaurantNit,productValue);
 
             platform.addProducts(product);
             System.out.println("El producto se ha registrado de manera exictosa");

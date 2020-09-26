@@ -30,10 +30,7 @@ public class RegisterRestaurants {
             System.out.println("Enter administration name");
             String administrationsName = scan.nextLine();
 
-            CityRestaurants restaurant = new CityRestaurants(restaurantsName,
-                    nitRestaurants,
-                    administrationsName
-            );
+            CityRestaurants restaurant = new CityRestaurants(restaurantsName,nitRestaurants,administrationsName);
 
             platform.addRestaurants(restaurant);
             System.out.println("El restaurante se ha registrado de manera exictosa");

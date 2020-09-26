@@ -3,6 +3,7 @@ package ui;
 import model.CityRestaurants;
 import model.Order;
 import model.Platform;
+import model.Product;
 
 import java.util.Date;
 import java.util.Scanner;
@@ -61,19 +62,9 @@ public class RegisterOrder {
             } else {
                 System.out.println("The option incorrect");
             }
-
             //updateInformation.updateStatusOrder(state);
             //Falta la lista de productos
-            Order order = new Order(orderCode,
-                    codeProduct,
-                    quantity,
-                    date,
-                    hour,
-                    idClient,
-                    nitRestaurant,
-                    listProduct,
-                    state
-            );
+            Order order = new Order(orderCode, codeProduct, quantity, date, hour, idClient, nitRestaurant, listProduct, state);
             platform.addOrders(order);
             System.out.println("La orden se ha registrado de manera exictosa");
         }

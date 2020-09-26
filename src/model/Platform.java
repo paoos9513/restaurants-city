@@ -1,5 +1,6 @@
 package model;
 
+import Exceptions.ExceptionOrder;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -7,7 +8,7 @@ import java.util.Comparator;
 public class Platform {
 
     private ArrayList<CityRestaurants> restaurants = new ArrayList<>();
-    ArrayList<Client> clients = new ArrayList<>();
+    private ArrayList<Client> clients = new ArrayList<>();
     private ArrayList<Product> products = new ArrayList<>();
     private ArrayList<Order> orders = new ArrayList<>();
 
@@ -18,6 +19,7 @@ public class Platform {
         initRestaurants();
         initProducts();
         initClients();
+
     }
 
     //metodo para cla
@@ -39,31 +41,9 @@ public class Platform {
     }
 
     public void initProducts() {
-
-        products.add(new Product("1232",
-                        "Hamburger",
-                        "Hamburguesa sencilla con papas a la francesa",
-                        "123456789",
-                        14500
-                )
-        );
-
-        products.add(new Product("12332",
-                        "HotDog",
-                        "Perro caliente con gaseosa",
-                        "1232322",
-                        12000
-                )
-        );
-
-        products.add(new Product("3056",
-                        "Crepes Mixto",
-                        "Crepes con pollo, carne de rez y cordero",
-                        "12345",
-                        14600
-                )
-        );
-
+        products.add(new Product("1232", "Hamburger", "Hamburguesa sencilla con papas a la francesa", "123456789", 14500));
+        products.add(new Product("12332", "HotDog", "Perro caliente con gaseosa", "1232322", 12000));
+        products.add(new Product("3056", "Crepes Mixto", "Crepes con pollo, carne de rez y cordero", "12345", 14600));
     }
 
     public void addProducts(Product products) {
@@ -71,49 +51,44 @@ public class Platform {
     }
 
     public void initClients() {
-
-        clients.add(new Client("Paola Andrea ",
-                        "Osorio Holguin",
-                        "CC",
-                        "1234567",
-                        "3142332222",
-                        "Carrera 119 # 49 - 51"
-                )
-        );
-
-        clients.add(new Client("Pablo Emilio",
-                        "Rendon Cardona",
-                        "CC",
-                        "1234567",
-                        "3142332222",
-                        "Carrera 119 # 49 - 51"
-                )
-        );
-
-        clients.add(new Client("Jhon Albeiro",
-                        "Osorio Holguin",
-                        "CC",
-                        "1234500",
-                        "4321212485",
-                        "Carrera 60 # 25E - 34"
-                )
-        );
-
-        clients.add(new Client("Anderson Arturo ",
-                        "Rueda Guevara",
-                        "CC",
-                        "123452345",
-                        "123456789",
-                        "Carrera 66 # 65 - 90"
-                )
-        );
-
+        clients.add(new Client("Paola Andrea ", "Osorio Holguin", "CC", "1234567", "3142332222", "Carrera 119 # 49 - 51"));
+        clients.add(new Client("Pablo Emilio", "Rendon Cardona", "CC", "1234567", "3142332222", "Carrera 119 # 49 - 51"));
+        clients.add(new Client("Jhon Albeiro", "Osorio Holguin", "CC", "1234500", "4321212485", "Carrera 60 # 25E - 34"));
+        clients.add(new Client("Anderson Arturo ", "Rueda Guevara", "CC", "123452345", "123456789", "Carrera 66 # 65 - 90"));
     }
 
     public void addClients(Client client) {
         this.clients.add(client);
     }
 
+    public boolean addProductToRestaurant(String restaurantNit, Order order) throws ExceptionOrder {
+
+        boolean search = false;
+        int cont = 0;
+        if (order != null) {
+
+            for (int i = 0; i < getProducts().size(); i++) {
+                if (getProducts().get(i).getRestaurantNit().equals(order.getNitRestaurant())) {
+                    cont++;
+                } else {
+                    throw new ExceptionOrder(getProducts().get(i).getProductName(),
+                            getProducts().get(i).getProductName());
+                }
+            }
+            if (products == cont) {
+                verify = true;
+            }
+        }
+        return verify;
+        for (int i = 0; i < restaurants.size(); i++) {
+            if (restaurants.get(i).getNit().equals(restaurantNit)) {
+                restaurants.get(i).addProducts(product);
+            }
+
+            System.out.println("Pedido se agrego satisfactoriamente a restaurante");
+        }
+
+    }
 
     public void addOrders(Order order) {
         this.orders.add(order);
@@ -160,12 +135,9 @@ public class Platform {
                 int result1;
                 result1 = (c2.compareTo(c1));
                 return result1;
-
             }
         };
         Collections.sort(clients, var);
     }
-
-    public String
 
 }

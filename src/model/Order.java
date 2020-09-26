@@ -26,7 +26,6 @@ public class Order {
         this.nitRestaurant = nitRestaurant;
         this.listProducts = listProducts;
         this.state = state;
-        //date = new Date();
 
     }
 
@@ -100,5 +99,9 @@ public class Order {
 
     public void setState(String state) {
         this.state = state;
+    }
+
+    public String toString() {
+        return "Code Order : "+ orderCode + ", Code : " + codeProduct + ", Quantity : "+ quantity + ", Date : "+ date + ", ID client : " + idClient + ", NIT restaurant : " + nitRestaurant;
     }
 }

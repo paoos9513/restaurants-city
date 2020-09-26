@@ -220,71 +220,18 @@ public class UpdateInformation {
                         System.out.println("(2).SENT");
                         System.out.println("(3).DELIVERED");
                         int stateOpt = Integer.parseInt(scan.nextLine());
-                        int election = 0;
                         String state = "";
-                        /**
 
-                         } else if (platform.getOrders().get(i).getState().equalsIgnoreCase("Process")) {
-                         election = 1;
-                         state = "Process";
-                         } else if (platform.getOrders().get(i).getState().equalsIgnoreCase("Sent")) {
-                         election = 2;
-                         state = "Sent";
-                         } else {
-                         election = 3;
-                         state = "Delivered";
-                         }
-                         **/
-                        switch (stateOpt) {
-                            case 1:
-                                if (platform.getOrders().get(i).getState().equalsIgnoreCase("Requested")) {
-                                    System.out.println("No se puede ejecutar esta accion");
-                                } else if (platform.getOrders().get(i).getState().equalsIgnoreCase("Process")) {
-                                    state = "Process";
-                                    platform.getOrders().get(i).setState(state);
-                                } else {
-                                    System.out.println("option incorrect");
-                                }
-                                break;
-                            case 2:
-                                if (platform.getOrders().get(i).getState().equalsIgnoreCase("Requested")) {
-                                    System.out.println("No se puede ejecutar esta accion");
-
-                                } else if (platform.getOrders().get(i).getState().equalsIgnoreCase("Process")) {
-                                    state = "Sent";
-                                    platform.getOrders().get(i).setState(state);
-
-                                } else if (platform.getOrders().get(i).getState().equalsIgnoreCase("Sent")) {
-                                    state = "Sent";
-                                    platform.getOrders().get(i).setState(state);
-                                } else {
-                                    System.out.println("option incorrect");
-                                }
-                                break;
-
-                            case 3:
-
-                                if (platform.getOrders().get(i).getState().equalsIgnoreCase("Requested")) {
-                                    System.out.println("No se puede ejecutar esta accion");
-
-                                } else if (platform.getOrders().get(i).getState().equalsIgnoreCase("Process")) {
-                                    System.out.println("No se puede ejecutar esta accion");
-
-                                } else if (platform.getOrders().get(i).getState().equalsIgnoreCase("Sent")) {
-                                    state = "Sent";
-                                    platform.getOrders().get(i).setState(state);
-                                } else if (platform.getOrders().get(i).getState().equalsIgnoreCase("Delivered")) {
-                                    state = "Delivered";
-                                    platform.getOrders().get(i).setState(state);
-                                } else {
-                                    System.out.println("option incorrect");
-                                }
-                                break;
-                            default: System.out.println("The option is incorrect");
+                        if (stateOpt == 1) {
+                            state = "Process";
+                        } else if (stateOpt == 2) {
+                            state = "Sent";
+                        } else if (stateOpt == 3) {
+                            state = "Delivered";
+                        } else {
+                            System.out.println("The option incorrect");
                         }
-
                         platform.getOrders().get(i).setState(state);
-
 
                         break;
                     default:
