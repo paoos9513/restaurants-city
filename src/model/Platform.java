@@ -200,48 +200,26 @@ public class Platform {
         if (m != null) {
 
             int s = m.size();
-            CityRestaurants[] matrix = new CityRestaurants[s];
+            CityRestaurants[] Array = new CityRestaurants[s];
             for (int i = 0; i < s; i++) {
-                matrix[i] = m.get(i);
+                Array[i] = m.get(i);
             }
             CityRestaurants temporal;
 
-            for (int i = 1; i < matrix.length; i++) {
-                for (int j = 0; j < matrix.length - 1; j++) {
-                    if (matrix[j].getRestaurantName().charAt(0) > matrix[j + 1].getRestaurantName().charAt(0)) {
-                        temporal = matrix[j];
-                        matrix[j] = matrix[j + 1];
-                        matrix[j + 1] = temporal;
+            for (int i = 1; i < Array.length; i++) {
+                for (int j = 0; j < Array.length - 1; j++) {
+                    if (Array[j].getRestaurantName().charAt(0) > Array[j + 1].getRestaurantName().charAt(0)) {
+                        temporal = Array[j];
+                        Array[j] = Array[j + 1];
+                        Array[j + 1] = temporal;
                     }
                 }
             }
             for (int i = 0; i < s; i++) {
-                System.out.println(matrix[i].getRestaurantName());
+                System.out.println(Array[i].getRestaurantName());
             }
         }
     }
 
-    public void insertionTelephone() {
-        int n = clients.size();
-        Client[] clients1 = new Client[n];
-
-        for (int i = 0; i < clients1.length; i++) {
-            clients1[i] = clients.get(i);
-        }
-        for (int i = 1; i < clients1.length; i++) {
-            Client aux = clients1[i];
-            int j;
-
-            for (j = i - 1; j >= 0 && (Integer.parseInt(clients1[j].getTelephone()) < Integer.parseInt(aux.getTelephone())); j--) {
-                clients1[j + 1] = clients1[j];
-            }
-            clients1[j + 1] = aux;
-        }
-        System.out.println("Insertion");
-        for (int i = 0; i < n; i++) {
-            System.out.println(clients1[i].getTelephone() + " " + clients1[i].getTelephone());
-        }
-
-    }
 
 }

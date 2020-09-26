@@ -1,8 +1,8 @@
 package Exceptions;
 
-public class ExceptionOrder extends Throwable {
+public class ExceptionOrder extends Exception {
 
-    public ExceptionOrder(String productName, String productName1) {
-        System.out.printf("");
+    public ExceptionOrder(String productName, String restaurant) {
+        System.out.println("The product " + productName + " does not belong to the Restaurant " + restaurant );
     }
 }

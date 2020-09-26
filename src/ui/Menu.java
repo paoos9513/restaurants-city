@@ -1,8 +1,5 @@
 package ui;
 
-import model.CityRestaurants;
-import model.Product;
-
 import java.util.Scanner;
 
 public class Menu {
@@ -15,6 +12,7 @@ public class Menu {
     RegisterOrder registerTheOrder = new RegisterOrder();
     UpdateInformation updateInformation = new UpdateInformation();
     SearchClient searchClient = new SearchClient();
+    InsertionTelephone insertionTelephone = new InsertionTelephone();
 
     public Menu() {
         show();
@@ -42,8 +40,8 @@ public class Menu {
                     "(7).Update Client Data \n" +
                     "(8).Update Order Data \n" +
                     "(9). Search Client \n" +
-                    "(10).Save Update \n" +
-                    "(11).Print \n" +
+                    "(10).Show sort for telephone number \n" +
+                    "(11). \n" +
                     "(12).Import \n" +
                     "(13).Show data base \n" +
                     "(14).Closed \n"
@@ -89,7 +87,7 @@ public class Menu {
                     break;
 
                 case 10:
-
+                    insertionTelephone.insertionTelephone();
                     break;
 
                 case 11:
