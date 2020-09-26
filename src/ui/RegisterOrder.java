@@ -27,7 +27,7 @@ public class RegisterOrder {
         for(int i = 0; i<opt; i++){
             int orderCode = (int)(1000000 * Math.random());
             System.out.println("Enter product code");
-            int codeProduct = Integer.parseInt(scan.nextLine());
+            String codeProduct = scan.nextLine();
             System.out.println("Enter the amount");
             int quantity = Integer.parseInt(scan.nextLine());
 

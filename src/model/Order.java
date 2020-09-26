@@ -9,7 +9,7 @@ public class Order {
     private final static String SENT = "Sent";
 
     private int orderCode;
-    private int codeProduct;
+    private String codeProduct;
     private int quantity;
     private Date date ;
     private Date hour;
@@ -20,7 +20,7 @@ public class Order {
 
 
 
-    public Order(int orderCode, int codeProduct, int quantity, Date date, Date hour, String idClient, String nitRestaurant, String listProducts, String state) {
+    public Order(int orderCode, String codeProduct, int quantity, Date date, Date hour, String idClient, String nitRestaurant, String listProducts, String state) {
         this.orderCode = orderCode;
         this.codeProduct = codeProduct;
         this.quantity = quantity;
@@ -42,11 +42,11 @@ public class Order {
         this.orderCode = orderCode;
     }
 
-    public int getCodeProduct() {
+    public String getCodeProduct() {
         return codeProduct;
     }
 
-    public void setCodeProduct(int codeProduct) {
+    public void setCodeProduct(String codeProduct) {
         this.codeProduct = codeProduct;
     }
 

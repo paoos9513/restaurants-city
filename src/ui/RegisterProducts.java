@@ -24,7 +24,7 @@ public class RegisterProducts {
         for(int i = 0; i<opt; i++){
 
             System.out.println("Enter product code");
-            int productCode = Integer.parseInt(scan.nextLine());
+            String productCode = scan.nextLine();
             System.out.println("Enter product name");
             String productName = scan.nextLine();
             System.out.println("Enter product description");

@@ -72,7 +72,7 @@ public class Menu {
                     break;
 
                 case 6:
-                    updateInformation.setCityRestaurants();
+                    updateInformation.updateRestaurant();
                     break;
 
                 case 7:

@@ -3,14 +3,14 @@ package model;
 import java.util.ArrayList;
 
 public class Product{
-    private int ProductCode;
+    private String ProductCode;
     private String productName;
     private String productDescription;
     private String restaurantNit;
     private double productValue;
     ArrayList<Product> products = new ArrayList<>();
 
-    public Product(int code, String productName, String productDescription, String restaurantNit, double productValue) {
+    public Product(String code, String productName, String productDescription, String restaurantNit, double productValue) {
         this.ProductCode = code;
         this.productName = productName;
         this.productDescription = productDescription;
@@ -18,11 +18,11 @@ public class Product{
         this.productValue = productValue;
     }
 
-    public int getProductCode() {
+    public String getProductCode() {
         return ProductCode;
     }
 
-    public void setProductCode(int productCode) {
+    public void setProductCode(String productCode) {
         this.ProductCode = productCode;
     }
 
