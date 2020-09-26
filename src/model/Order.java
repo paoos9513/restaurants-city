@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Order {
@@ -14,7 +15,7 @@ public class Order {
     private String nitRestaurant;
     private String listProducts;
     private String state;
-
+    ArrayList<Product> products = new ArrayList<>();
 
     public Order(String orderCode, String codeProduct, int quantity, Date date, Date hour, String idClient, String nitRestaurant, String listProducts, String state) {
         this.orderCode = orderCode;
@@ -101,7 +102,15 @@ public class Order {
         this.state = state;
     }
 
+    public ArrayList<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(ArrayList<Product> products) {
+        this.products = products;
+    }
+
     public String toString() {
-        return "Code Order : "+ orderCode + ", Code : " + codeProduct + ", Quantity : "+ quantity + ", Date : "+ date + ", ID client : " + idClient + ", NIT restaurant : " + nitRestaurant;
+        return "Code Order : " + orderCode + ", Code : " + codeProduct + ", Quantity : " + quantity + ", Date : " + date + ", ID client : " + idClient + ", NIT restaurant : " + nitRestaurant + ", Status order : " + state;
     }
 }

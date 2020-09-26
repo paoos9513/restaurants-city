@@ -46,6 +46,11 @@ public class CityRestaurants implements Serializable {
         this.products.add(products);
     }
 
+    @Override
+    public String toString() {
+        return "Restaurant Name : " + restaurantName + ", NIT : " + nit + ", Administrator Name : " + administratorName;
+    }
+
 }
 
 

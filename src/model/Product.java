@@ -8,7 +8,7 @@ public class Product {
     private String productDescription;
     private String restaurantNit;
     private double productValue;
-    ArrayList<Product> products = new ArrayList<>();
+
 
     public Product(String code, String productName, String productDescription, String restaurantNit, double productValue) {
         this.ProductCode = code;

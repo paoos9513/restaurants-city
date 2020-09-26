@@ -14,6 +14,7 @@ public class Menu {
     RegisterClients registerTheClient = new RegisterClients();
     RegisterOrder registerTheOrder = new RegisterOrder();
     UpdateInformation updateInformation = new UpdateInformation();
+    SearchClient searchClient = new SearchClient();
 
     public Menu() {
         show();
@@ -40,7 +41,7 @@ public class Menu {
                     "(6).Update Product Data \n" +
                     "(7).Update Client Data \n" +
                     "(8).Update Order Data \n" +
-                    "(9).Save Information \n" +
+                    "(9). Search Client \n" +
                     "(10).Save Update \n" +
                     "(11).Print \n" +
                     "(12).Import \n" +
@@ -84,7 +85,7 @@ public class Menu {
                     break;
 
                 case 9:
-
+                    searchClient.searchClient1();
                     break;
 
                 case 10:

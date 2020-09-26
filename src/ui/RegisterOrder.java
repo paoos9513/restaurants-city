@@ -5,6 +5,7 @@ import model.Order;
 import model.Platform;
 import model.Product;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -42,6 +43,27 @@ public class RegisterOrder {
             System.out.println("Enter the NIT of the restaurant that the order belong to");
             String nitRestaurant = scan.nextLine();
             String listProduct = scan.nextLine();
+
+            ArrayList<Product> products = new ArrayList();
+            int opt = -1;
+
+            while (opt != 1) {
+                System.out.println("Enter Products?");
+                System.out.println("	1. No");
+                System.out.println("	2. Si");
+                opt = scan.nextInt();
+
+                if (opt == 2) {
+                    System.out.println("Por favor igrese el codigo del producto ");
+                    scan.nextLine();
+                    String productName = scan.nextLine();
+                    Product temp = platform.addProductsToOrder(productName);
+                    products.add(temp);
+
+                    System.out.println("The option is incorrect");
+                }
+            }
+
             System.out.println("Enter de order status");
             System.out.println("(1).REQUESTED");
             System.out.println("(2).PROCESS");
