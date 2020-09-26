@@ -1,9 +1,7 @@
 package model;
 
-import java.util.ArrayList;
-
 public class Product {
-    private String ProductCode;
+    private String productCode;
     private String productName;
     private String productDescription;
     private String restaurantNit;
@@ -11,7 +9,7 @@ public class Product {
 
 
     public Product(String code, String productName, String productDescription, String restaurantNit, double productValue) {
-        this.ProductCode = code;
+        this.productCode = code;
         this.productName = productName;
         this.productDescription = productDescription;
         this.restaurantNit = restaurantNit;
@@ -19,11 +17,11 @@ public class Product {
     }
 
     public String getProductCode() {
-        return ProductCode;
+        return productCode;
     }
 
     public void setProductCode(String productCode) {
-        this.ProductCode = productCode;
+        this.productCode = productCode;
     }
 
     public String getProductName() {
@@ -60,6 +58,6 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Name : "+ productName + ", Code : " + ProductCode + ", Description : "+ productDescription + ", Price : "+ productValue + ", NIT restaurant : " + restaurantNit;
+        return "Name : "+ productName + ", Code : " + productCode + ", Description : "+ productDescription + ", Price : "+ productValue + ", NIT restaurant : " + restaurantNit;
     }
 }
