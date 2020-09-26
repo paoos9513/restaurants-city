@@ -50,7 +50,7 @@ public class Platform {
 
     public void initProducts(){
 
-        products.add(new Product( 1232,
+        products.add(new Product( "1232",
                 "Hamburger",
                 "Hamburguesa sencilla con papas a la francesa",
                 "123456789",
@@ -58,7 +58,7 @@ public class Platform {
                 )
         );
 
-        products.add(new Product( 12332,
+        products.add(new Product( "12332",
                         "HotDog",
                         "Perro caliente con gaseosa",
                         "1232322",
@@ -66,7 +66,7 @@ public class Platform {
                 )
         );
 
-        products.add(new Product( 3056,
+        products.add(new Product( "3056",
                         "Crepes Mixto",
                         "Crepes con pollo, carne de rez y cordero",
                         "12345",

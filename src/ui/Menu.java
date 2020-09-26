@@ -76,13 +76,15 @@ public class Menu {
                     break;
 
                 case 7:
+                    updateInformation.updateProduct();
                     break;
 
                 case 8:
+                    updateInformation.updateClient();
                     break;
 
                 case 9:
-                    //updateInformation.updateOrderShow();
+
                     break;
 
                 case 10:
