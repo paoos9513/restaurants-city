@@ -9,7 +9,7 @@ public class UpdateInformation {
     int opt;
     Scanner scan = new Scanner(System.in);
     Platform platform;
-
+    String update = "";
     public UpdateInformation() {
         platform = Platform.getInstance();
     }
@@ -22,9 +22,8 @@ public class UpdateInformation {
         String nitS = scan.nextLine();
 
         for (int i = 0; i < platform.getRestaurants().size(); i++) {
-
-            if (nitS.equals(platform.getRestaurants().get(i).getNit())) {
-
+            update = "";
+            if (nitS.equalsIgnoreCase(platform.getRestaurants().get(i).getNit())) {
                 System.out.println(" ");
                 System.out.println("----------------UPDATE----------------");
                 System.out.println("Select the option you want to update \n");
@@ -54,8 +53,11 @@ public class UpdateInformation {
                 }
                 System.out.println("la info se ha cambiado");
             } else {
-                System.out.println("The restaurant doest not exist");
+                update = "The restaurant not exist";
             }
+        }
+        if (update.equalsIgnoreCase("The restaurant not exist")){
+            System.out.println(update);
         }
 
     }
@@ -67,7 +69,7 @@ public class UpdateInformation {
         String codeSearch = scan.nextLine();
 
         for (int i = 0; i < platform.getProducts().size(); i++) {
-
+            update = "";
             if (codeSearch.equals(platform.getProducts().get(i).getProductCode())) {
 
                 System.out.println(" ");
@@ -105,9 +107,12 @@ public class UpdateInformation {
                 }
                 System.out.println("se ha actualizado de forma exictosa ");
             } else {
-                System.out.println("The product doest not exist");
+                update = "The product doest not exist";
             }
 
+        }
+        if (update.equalsIgnoreCase("The product doest not exist")){
+            System.out.println(update);
         }
     }
 
@@ -118,7 +123,7 @@ public class UpdateInformation {
         String idSearch = scan.nextLine();
 
         for (int i = 0; i < platform.getClients().size(); i++) {
-
+            update ="";
             if (idSearch.equals(platform.getClients().get(i).getNumberId())) {
 
                 System.out.println(" ");
@@ -164,10 +169,11 @@ public class UpdateInformation {
                 System.out.println("se ha actualizado de forma exitosa ");
             } else {
 
-                System.out.println("The Client doest not exist");
+                update = "The Client doest not exist";
             }
-
-
+        }
+        if (update.equalsIgnoreCase("The Client doest not exist")){
+            System.out.println(update);
         }
     }
 
@@ -179,7 +185,7 @@ public class UpdateInformation {
         String codeOrderSearch = scan.nextLine();
 
         for (int i = 0; i < platform.getOrders().size(); i++) {
-
+            update = "";
             if (codeOrderSearch.equals(platform.getOrders().get(i).getOrderCode())) {
 
                 System.out.println(" ");

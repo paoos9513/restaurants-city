@@ -1,20 +1,18 @@
 package ui;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Menu {
     Scanner scan = new Scanner(System.in);
     int opt;
-
     RegisterRestaurants registerTheRestaurant = new RegisterRestaurants();
     RegisterProducts registerTheProduct = new RegisterProducts();
     RegisterClients registerTheClient = new RegisterClients();
     RegisterOrder registerTheOrder = new RegisterOrder();
     UpdateInformation updateInformation = new UpdateInformation();
-    SearchClient searchClient = new SearchClient();
-    InsertionTelephone insertionTelephone = new InsertionTelephone();
 
-    public Menu() {
+    public Menu() throws IOException {
         show();
         menu();
     }
@@ -26,8 +24,8 @@ public class Menu {
         System.out.println("************************************");
     }
 
-    public void menu() {
-        while (opt != 14) {
+    public void menu() throws IOException {
+        while (opt != 10) {
             System.out.println(" ");
             System.out.println("----------------MENU----------------");
             System.out.println("Select the option you want \n");
@@ -39,16 +37,12 @@ public class Menu {
                     "(6).Update Product Data \n" +
                     "(7).Update Client Data \n" +
                     "(8).Update Order Data \n" +
-                    "(9). Search Client \n" +
-                    "(10).Show sort for telephone number \n" +
-                    "(11). \n" +
-                    "(12).Import \n" +
-                    "(13).Show data base \n" +
-                    "(14).Closed \n"
+                    "(9).Show data restaurants, clients, products and orders \n" +
+                    "(10).Closed \n"
+
             );
 
             opt = Integer.parseInt(scan.nextLine());
-
             switch (opt) {
 
                 case 1:
@@ -83,22 +77,10 @@ public class Menu {
                     break;
 
                 case 9:
-                    searchClient.searchClient1();
+                    new SubMenu();
                     break;
 
                 case 10:
-                    insertionTelephone.insertionTelephone();
-                    break;
-
-                case 11:
-
-                    break;
-                case 12:
-                    break;
-                case 13:
-                    new SubMenu();
-                    break;
-                case 14:
                     scan.close();
                     break;
                 default:

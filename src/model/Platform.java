@@ -2,7 +2,6 @@ package model;
 
 import Exceptions.ClientNotFoundException;
 import Exceptions.ExceptionOrder;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -24,7 +23,7 @@ public class Platform {
 
     }
 
-    //metodo para cla
+
     public static Platform getInstance() {
         if (platform == null) {
             platform = new Platform();
@@ -61,6 +60,7 @@ public class Platform {
 
     public void addClients(Client client) {
         this.clients.add(client);
+
     }
 
     public boolean addProductToRestaurant(String restaurantNit, Order order) throws ExceptionOrder {
@@ -84,11 +84,11 @@ public class Platform {
 
     }
 
-    public Product addProductsToOrder(String productName) {
+    public Product addProductsToOrder(String codeProduct) {
         Product listProduct = null;
         boolean found = false;
         for (int i = 0; i < getProducts().size(); i++) {
-            if (getProducts().get(i).getProductCode().equalsIgnoreCase(productName)) {
+            if (getProducts().get(i).getProductCode().equalsIgnoreCase(codeProduct)) {
                 listProduct = getProducts().get(i);
                 found = true;
             }
@@ -221,5 +221,22 @@ public class Platform {
         }
     }
 
+    public void sortByName(){
+        NameComparator namecomparator = new NameComparator();
+        Collections.sort(restaurants, namecomparator);
+    }
 
-}
+    public void sortTelephone() {
+        Comparator<Client> var;
+        var = new Comparator<Client>() {
+            public int compare(Client n1, Client n2) {
+                String c1 = n1.getTelephone();
+                String c2 = n2.getTelephone();
+                int result1;
+                result1 = (c2.compareTo(c1));
+                return result1;
+            }
+        };
+        Collections.sort(clients, var);
+    }
+ }

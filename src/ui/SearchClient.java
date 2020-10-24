@@ -2,7 +2,6 @@ package ui;
 
 import Exceptions.ClientNotFoundException;
 import model.Platform;
-
 import java.util.Scanner;
 
 public class SearchClient {
@@ -23,4 +22,5 @@ public class SearchClient {
             a.getMessage();
         }
     }
+
 }

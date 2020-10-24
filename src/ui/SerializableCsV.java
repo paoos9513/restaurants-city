@@ -6,14 +6,14 @@ import model.Platform;
 import model.Product;
 
 import java.io.BufferedReader;
-import java.io.Serializable;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class SerializableCsV {
     Platform platform;
-    public SerializableCsV(){
+
+    public SerializableCsV() {
         platform = Platform.getInstance();
 
     }
@@ -82,7 +82,7 @@ public class SerializableCsV {
                     String numberId = LineDate[3];
                     String telephone = LineDate[4].trim();
                     String address = LineDate[5];
-                    Client client1 = new Client(clientName, clientLastName, idType, numberId , telephone, address);
+                    Client client1 = new Client(clientName, clientLastName, idType, numberId, telephone, address);
                     platform.addClients(client1);
                 }
                 count++;
@@ -91,4 +91,5 @@ public class SerializableCsV {
             a.getMessage();
         }
     }
+
 }

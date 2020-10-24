@@ -1,5 +1,6 @@
 package ui;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class SubMenu {
@@ -8,11 +9,11 @@ public class SubMenu {
 
     Show show = new Show();
 
-    public SubMenu() {
+    public SubMenu() throws IOException {
         subMenu();
     }
 
-    public void subMenu() {
+    public void subMenu() throws IOException {
         while (opt != 5) {
             System.out.println(" ");
             System.out.println("----------------SUB MENU----------------");
@@ -47,11 +48,6 @@ public class SubMenu {
 
 
         }
-    }
-
-    public void subMenuUpdate() {
-
-
     }
 
 }

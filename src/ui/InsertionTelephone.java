@@ -30,6 +30,5 @@ public class InsertionTelephone {
         for (int i = 0; i < sizeArray; i++) {
             System.out.println(clients1[i].getTelephone() + " " + clients1[i].getTelephone());
         }
-
     }
 }

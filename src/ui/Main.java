@@ -1,18 +1,18 @@
 package ui;
 
-import model.CityRestaurants;
 import model.Platform;
+import java.io.IOException;
 
 public class Main {
 
     Platform platform;
 
-    public Main() {
+    public Main() throws IOException {
         platform = new Platform();
         new Menu();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         new Main();
     }
 
